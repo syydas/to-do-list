@@ -2,7 +2,17 @@ var addBtn = document.getElementsByClassName("add-btn")[0];
 var taskInput = document.getElementById("task-input");
 var taskList = document.getElementsByTagName("ol")[0];
 
-addBtn.onclick = function() {
+taskInput.addEventListener('keydown', function(event) {
+  if (event.keyCode === 13) {
+    toAddTask();
+  }
+})
+
+addBtn.addEventListener('click', function(event) {
+  toAddTask();
+})
+
+function toAddTask() {
 	var task = taskInput.value.trim();
 	if (task === "") {
 		return;
