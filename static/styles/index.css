@@ -15,9 +15,24 @@ body {
 	background-color: #fefefe;
 }
 
-.todo-list p {
+.header p {
   margin: 15px 0 15px 0;
   font-size: 15px;
   font-weight: 600;
   font-style: italic;
 }
+
+.add-task input{
+  height: 28px;
+  width: 400px;
+}
+
+.add-btn {
+  height: 30px;
+  width: 60px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  color: #fff;
+  background-color: #fc999c;
+} 
