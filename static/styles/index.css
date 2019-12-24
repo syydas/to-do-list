@@ -33,6 +33,7 @@ body {
   border: none;
   border-radius: 5px;
   outline: none;
+  cursor: pointer;
   color: #fff;
   background-color: #fc999c;
 } 
@@ -55,4 +56,25 @@ ol li span {
   margin-left: 5px;
   font-size: 15px;
   font-weight: 600;
+  cursor: pointer;
+}
+
+.footer {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.status-btn {
+  border: 1px solid transparent;
+  margin: 0 10px;
+  padding: 7px;
+  height: 30px;
+  outline: none;
+  color: #fc9a9b;
+  background-color: #fefefe;
+}
+
+.status-btn:hover {
+  border: 1px solid #f4ebeb;
+  cursor: pointer;
 }

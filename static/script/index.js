@@ -41,6 +41,11 @@ function addTask(item) {
 }
 
 function changeStyle(item) {
-	item.parentNode.style.color = "#999999";
-	item.parentNode.style.textDecorationLine = "line-through";
+	if (item.checked) {
+		item.parentNode.style.color = "#999999";
+		item.parentNode.style.textDecorationLine = "line-through";
+	} else {
+    item.parentNode.style.color = "black";
+		item.parentNode.style.textDecorationLine = "";
+  }
 }
