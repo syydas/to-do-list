@@ -13,9 +13,9 @@ todoList.addEventListener("click", function(event) {
 	switch (eventTarget.className) {
 		case "add-btn":
 			toAddTask();
-      break;
-    case "hasDone":
-      changeStyle(eventTarget);
+			break;
+		case "hasDone":
+			changeStyle(eventTarget);
 		default:
 			break;
 	}
@@ -36,6 +36,6 @@ function addTask(item) {
 }
 
 function changeStyle(item) {
-  item.parentNode.style.color = "#999999";
-  item.parentNode.style.textDecorationLine = "line-through";
+	item.parentNode.style.color = "#999999";
+	item.parentNode.style.textDecorationLine = "line-through";
 }
