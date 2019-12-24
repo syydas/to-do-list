@@ -4,7 +4,7 @@ var todoList = document.getElementsByClassName("todo-list")[0];
 
 taskInput.addEventListener("keydown", function(event) {
 	if (event.keyCode === 13) {
-		toAddTask();
+		addStorage();
 	}
 });
 
@@ -12,23 +12,27 @@ todoList.addEventListener("click", function(event) {
 	var eventTarget = event.target;
 	switch (eventTarget.className) {
 		case "add-btn":
-			toAddTask();
+			addStorage();
 			break;
 		case "hasDone":
-      changeStyle(eventTarget);
-      break;
+			changeStyle(eventTarget);
+			break;
 		default:
 			break;
 	}
 });
 
-function toAddTask() {
-	var task = taskInput.value.trim();
+function addStorage() {
+	var task = taskInput.value;
 	if (task === "") {
 		return;
 	}
+	if (!localStorage.getItem(task)) {
+		var localTask = [localStorage.length, task, "", true];
+		localStorage.setItem(task, JSON.stringify(localTask));
+		addTask(task);
+	}
 	taskInput.value = "";
-	addTask(task);
 }
 
 function addTask(item) {
