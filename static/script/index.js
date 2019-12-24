@@ -1,16 +1,25 @@
-var addBtn = document.getElementsByClassName("add-btn")[0];
 var taskInput = document.getElementById("task-input");
 var taskList = document.getElementsByTagName("ol")[0];
+var todoList = document.getElementsByClassName("todo-list")[0];
 
-taskInput.addEventListener('keydown', function(event) {
-  if (event.keyCode === 13) {
-    toAddTask();
-  }
-})
+taskInput.addEventListener("keydown", function(event) {
+	if (event.keyCode === 13) {
+		toAddTask();
+	}
+});
 
-addBtn.addEventListener('click', function(event) {
-  toAddTask();
-})
+todoList.addEventListener("click", function(event) {
+	var eventTarget = event.target;
+	switch (eventTarget.className) {
+		case "add-btn":
+			toAddTask();
+      break;
+    case "hasDone":
+      changeStyle(eventTarget);
+		default:
+			break;
+	}
+});
 
 function toAddTask() {
 	var task = taskInput.value.trim();
@@ -19,11 +28,14 @@ function toAddTask() {
 	}
 	taskInput.value = "";
 	addTask(task);
-};
+}
 
 function addTask(item) {
-	var taskItem = document.createElement("li");
-	taskItem.innerHTML = `<input type = "checkbox" name = "complete-task" />
-  <span>${item}</span>`;
-	taskList.appendChild(taskItem);
+	taskList.innerHTML += `<li><input class="hasDone" type="checkbox" name="complete-task" />
+  <span>${item}</span></li>`;
+}
+
+function changeStyle(item) {
+  item.parentNode.style.color = "#999999";
+  item.parentNode.style.textDecorationLine = "line-through";
 }
