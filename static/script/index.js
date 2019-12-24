@@ -15,7 +15,8 @@ todoList.addEventListener("click", function(event) {
 			toAddTask();
 			break;
 		case "hasDone":
-			changeStyle(eventTarget);
+      changeStyle(eventTarget);
+      break;
 		default:
 			break;
 	}
