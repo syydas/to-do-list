@@ -36,3 +36,23 @@ body {
   color: #fff;
   background-color: #fc999c;
 } 
+
+ol {
+  margin: 30px 25px;
+  font-size: 15px;
+}
+
+ol li {
+  padding: 0 8px;
+  line-height: 35px;
+}
+
+ol li:nth-of-type(even) {
+  background-color: #f3ebeb;
+}
+
+ol li span {
+  margin-left: 5px;
+  font-size: 15px;
+  font-weight: 600;
+}
