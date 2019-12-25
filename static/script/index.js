@@ -3,10 +3,12 @@ var taskList = document.getElementsByTagName("ol")[0];
 var todoList = document.getElementsByClassName("todo-list")[0];
 var taskStatus = "all";
 taskInput.addEventListener("keydown", function(event) {
-	if (event.keyCode === 13) {
+	if (13 === event.keyCode) {
 		addStorage();
 	}
 });
+
+window.addEventListener("load", clear);
 
 todoList.addEventListener("click", function(event) {
 	var eventTarget = event.target;
@@ -94,3 +96,9 @@ function showTask(status) {
 		}
 	}
 }
+
+function clear() {
+	localStorage.clear();
+}
+
+
