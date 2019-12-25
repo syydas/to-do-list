@@ -44,6 +44,7 @@ ol {
 }
 
 ol li {
+  position: relative;
   padding: 0 8px;
   line-height: 35px;
 }
@@ -65,10 +66,10 @@ ol li span {
 }
 
 .status-btn {
-  border: 1px solid transparent;
   margin: 0 10px;
   padding: 7px;
   height: 30px;
+  border: 1px solid transparent;
   outline: none;
   color: #fc9a9b;
   background-color: #fefefe;
@@ -79,8 +80,22 @@ ol li span {
   cursor: pointer;
 }
 
-.has-down {
+.has-done {
   text-decoration: line-through;
   color: #999999;
+}
 
+.delete-btn {
+  display: none;
+  position: absolute;
+  right: 10px;
+  top: 6px;
+  font-size: 20px;
+  border: 1px solid transparent;
+  outline: none;
+  background-color: transparent;
+}
+
+li:hover .delete-btn {
+  display: inline;
 }
