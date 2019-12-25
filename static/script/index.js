@@ -18,7 +18,7 @@ todoList.addEventListener("click", function(event) {
 			addStorage();
 			break;
 		case "hasDone":
-			changeStatus(eventTarget);
+			changeStyle(eventTarget);
 			break;
 		case "all":
 			taskStatus = "all";
@@ -59,23 +59,20 @@ function addTask(item) {
   <span>${task[1]}</span></li>`;
 }
 
-function changeStatus(item) {
+/*function changeStatus(item) {
 	var status = item.checked;
 	var content = item.parentNode.innerText;
 	var index = JSON.parse(localStorage.getItem(content));
 	var localTask = [index, item.parentNode.innerText, status, true];
 	localStorage.setItem(content, JSON.stringify(localTask));
 	changeStyle(item);
-}
+}*/
 
 function changeStyle(item) {
-	if (item.checked) {
-		item.parentNode.style.color = "#999999";
-		item.parentNode.style.textDecorationLine = "line-through";
-	} else {
-		item.parentNode.style.color = "black";
-		item.parentNode.style.textDecorationLine = "";
-	}
+  var taskChange = item.parentNode;
+  if (item.checked) {
+    taskChange.setAttribute("class", "has-down")
+  }
 }
 
 function showTask(status) {

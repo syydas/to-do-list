@@ -78,3 +78,9 @@ ol li span {
   border: 1px solid #f4ebeb;
   cursor: pointer;
 }
+
+.has-down {
+  text-decoration: line-through;
+  color: #999999;
+
+}
